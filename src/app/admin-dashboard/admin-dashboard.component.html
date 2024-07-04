@@ -1,3 +1,8 @@
-<h1>Admin Dashboard</h1>
-<p>Bienvenue sur le tableau de bord admin.</p>
-<!-- Ajoutez d'autres éléments ici -->
+<nav>
+  <ul>
+    <li><a routerLink="salles" routerLinkActive="active">Salles</a></li>
+    <li><a routerLink="reservations" routerLinkActive="active">Réservations</a></li>
+    <li><a routerLink="users" routerLinkActive="active">Utilisateurs</a></li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>

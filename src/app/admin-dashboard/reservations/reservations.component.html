@@ -1,0 +1,24 @@
+<h2>Réservations</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Salle</th>
+      <th>Date de Début</th>
+      <th>Date de Fin</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let reservation of reservations">
+      <td>{{ reservation.name }}</td>
+      <td>{{ reservation.numSalleId }}</td>
+      <td>{{ reservation.dateDebutReservation }}</td>
+      <td>{{ reservation.dateFinReservation }}</td>
+      <td>
+        <button (click)="viewReservation(reservation)">Afficher</button>
+        <button (click)="deleteReservation(reservation._id)">Supprimer</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
