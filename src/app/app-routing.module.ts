@@ -8,6 +8,10 @@ import { MeetingRoomsComponent } from './meeting-rooms/meeting-rooms.component';
 import { SallesComponent } from './admin-dashboard/salles/salles.component';
 import { ReservationsComponent } from './admin-dashboard/reservations/reservations.component';
 import { UsersComponent } from './admin-dashboard/users/users.component';
+import { AddSalleComponent } from './admin-dashboard/add-salle/add-salle.component';
+import { EditSalleComponent } from './admin-dashboard/edit-salle/edit-salle.component';
+import { ViewReservationComponent } from './admin-dashboard/view-reservation/view-reservation.component';
+import { ViewUserComponent } from './admin-dashboard/view-user/view-user.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -22,6 +26,10 @@ const routes: Routes = [
       { path: 'salles', component: SallesComponent },
       { path: 'reservations', component: ReservationsComponent },
       { path: 'users', component: UsersComponent },
+      { path: 'add-salle', component: AddSalleComponent },
+      { path: 'edit-salle/:id', component: EditSalleComponent },
+      { path: 'view-reservation/:id', component: ViewReservationComponent },
+      { path: 'view-user/:id', component: ViewUserComponent },
       { path: '', redirectTo: 'salles', pathMatch: 'full' },
     ],
   },

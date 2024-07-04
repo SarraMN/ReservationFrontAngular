@@ -1,24 +1,27 @@
-<h2>Réservations</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Nom</th>
-      <th>Salle</th>
-      <th>Date de Début</th>
-      <th>Date de Fin</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let reservation of reservations">
-      <td>{{ reservation.name }}</td>
-      <td>{{ reservation.numSalleId }}</td>
-      <td>{{ reservation.dateDebutReservation }}</td>
-      <td>{{ reservation.dateFinReservation }}</td>
-      <td>
-        <button (click)="viewReservation(reservation)">Afficher</button>
-        <button (click)="deleteReservation(reservation._id)">Supprimer</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="reservations-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Utilisateur</th>
+        <th>Numéro de Salle</th>
+        <th>Date de Début</th>
+        <th>Date de Fin</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reservation of reservations">
+        <td>{{ reservation.name }}</td>
+        <td>{{ reservation.userId }}</td>
+        <td>{{ reservation.numSalleId }}</td>
+        <td>{{ reservation.dateDebutReservation | date : "short" }}</td>
+        <td>{{ reservation.dateFinReservation | date : "short" }}</td>
+        <td>
+          <button (click)="viewReservation(reservation._id)">View</button>
+          <button (click)="deleteReservation(reservation._id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

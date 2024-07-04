@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SalleService } from '../../services/salle.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-salles',
@@ -9,7 +10,7 @@ import { SalleService } from '../../services/salle.service';
 export class SallesComponent implements OnInit {
   salles: any[] = [];
 
-  constructor(private salleService: SalleService) {}
+  constructor(private salleService: SalleService, private router: Router) {}
 
   ngOnInit(): void {
     this.getSalles();
@@ -21,28 +22,12 @@ export class SallesComponent implements OnInit {
     });
   }
 
-  addSalle(): void {
-    const newSalle = {
-      numSalle: 101,
-      name: 'Salle 101',
-      capacity: 10,
-      isAvailable: true,
-    };
-    this.salleService.addSalle(newSalle).subscribe((salle: any) => {
-      this.salles.push(salle);
-    });
+  navigateToAddSalle(): void {
+    this.router.navigate(['/admin-dashboard/add-salle']);
   }
 
-  editSalle(salle: any): void {
-    const updatedSalle = { ...salle, name: 'Salle 101 Updated' };
-    this.salleService
-      .updateSalle(salle._id, updatedSalle)
-      .subscribe((data: any) => {
-        const index = this.salles.findIndex((s) => s._id === salle._id);
-        if (index !== -1) {
-          this.salles[index] = data;
-        }
-      });
+  navigateToEditSalle(id: string): void {
+    this.router.navigate(['/admin-dashboard/edit-salle', id]);
   }
 
   deleteSalle(id: string): void {

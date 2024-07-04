@@ -13,6 +13,10 @@ import { MeetingRoomsComponent } from './meeting-rooms/meeting-rooms.component';
 import { SallesComponent } from './admin-dashboard/salles/salles.component';
 import { ReservationsComponent } from './admin-dashboard/reservations/reservations.component';
 import { UsersComponent } from './admin-dashboard/users/users.component';
+import { AddSalleComponent } from './admin-dashboard/add-salle/add-salle.component';
+import { EditSalleComponent } from './admin-dashboard/edit-salle/edit-salle.component';
+import { ViewReservationComponent } from './admin-dashboard/view-reservation/view-reservation.component';
+import { ViewUserComponent } from './admin-dashboard/view-user/view-user.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +28,10 @@ import { UsersComponent } from './admin-dashboard/users/users.component';
     SallesComponent,
     ReservationsComponent,
     UsersComponent,
+    AddSalleComponent,
+    EditSalleComponent,
+    ViewReservationComponent,
+    ViewUserComponent,
   ],
   imports: [
     BrowserModule,
