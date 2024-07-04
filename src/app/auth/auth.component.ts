@@ -42,10 +42,13 @@ export class AuthComponent {
         const user = response.user;
         localStorage.setItem('token', response.token);
         localStorage.setItem('isAdmin', user.isAdmin);
+        localStorage.setItem('userId', user._id);
+        console.log(user.id);
+
         if (user.isAdmin) {
           this.router.navigate(['/admin-dashboard']); // Rediriger les admins vers le tableau de bord admin
         } else {
-          this.router.navigate(['/meeting-rooms']); // Rediriger les autres utilisateurs vers les salles de réunion
+          this.router.navigate(['/user-dashboard/meeting-rooms']); // Rediriger les autres utilisateurs vers les salles de réunion
         }
       },
       (error: any) => {

@@ -9,10 +9,12 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth.interceptor';
 import { RegisterComponent } from './register/register.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-import { MeetingRoomsComponent } from './meeting-rooms/meeting-rooms.component';
+import { MeetingRoomsComponent } from './user-dashboard/meeting-rooms/meeting-rooms.component';
 import { SallesComponent } from './admin-dashboard/salles/salles.component';
 import { ReservationsComponent } from './admin-dashboard/reservations/reservations.component';
 import { UsersComponent } from './admin-dashboard/users/users.component';
+import { ReservationComponent } from './user-dashboard/reservation/reservation.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { UsersComponent } from './admin-dashboard/users/users.component';
     SallesComponent,
     ReservationsComponent,
     UsersComponent,
+    ReservationComponent,
+    UserDashboardComponent,
   ],
   imports: [
     BrowserModule,
