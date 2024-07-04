@@ -1,0 +1,11 @@
+<div class="view-reservation-container">
+  <h2>Détails de la Réservation</h2>
+  <div *ngIf="reservation">
+    <p><strong>Nom:</strong> {{ reservation.name }}</p>
+    <p><strong>Utilisateur:</strong> {{ reservation.userId }}</p>
+    <p><strong>Numéro de Salle:</strong> {{ reservation.numSalleId }}</p>
+    <p><strong>Date de Début:</strong> {{ reservation.dateDebutReservation | date: 'short' }}</p>
+    <p><strong>Date de Fin:</strong> {{ reservation.dateFinReservation | date: 'short' }}</p>
+  </div>
+  <button (click)="goBack()">Retour</button>
+</div>

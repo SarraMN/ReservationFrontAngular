@@ -1,20 +1,23 @@
-<h2>Utilisateurs</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Nom</th>
-      <th>Email</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let user of users">
-      <td>{{ user.name }}</td>
-      <td>{{ user.email }}</td>
-      <td>
-        <button (click)="viewUser(user)">Afficher</button>
-        <button (click)="deleteUser(user._id)">Supprimer</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="users-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Admin</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.isAdmin ? "Oui" : "Non" }}</td>
+        <td>
+          <button (click)="viewUser(user._id)">Afficher</button>
+          <button (click)="deleteUser(user._id)">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

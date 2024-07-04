@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ReservationService } from '../../services/reservation.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reservations',
@@ -9,7 +10,10 @@ import { ReservationService } from '../../services/reservation.service';
 export class ReservationsComponent implements OnInit {
   reservations: any[] = [];
 
-  constructor(private reservationService: ReservationService) {}
+  constructor(
+    private reservationService: ReservationService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.getReservations();
@@ -21,8 +25,8 @@ export class ReservationsComponent implements OnInit {
     });
   }
 
-  viewReservation(reservation: any): void {
-    // Implémentez la logique pour afficher les détails de la réservation
+  viewReservation(id: string): void {
+    this.router.navigate(['/admin-dashboard/view-reservation', id]);
   }
 
   deleteReservation(id: string): void {
