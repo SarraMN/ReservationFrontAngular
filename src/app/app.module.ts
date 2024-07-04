@@ -7,12 +7,14 @@ import { AuthComponent } from './auth/auth.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
     RegisterComponent,
     AuthComponent,
     AppComponent,
+    AdminDashboardComponent,
   ],
   imports: [
     BrowserModule,
