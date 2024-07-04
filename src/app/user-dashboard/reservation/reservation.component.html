@@ -1,0 +1,41 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header bg-primary text-white text-center">
+            <h2>Réserver Meeting Room</h2>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+              <div class="form-group">
+                <label for="name">Nom</label>
+                <input type="text" id="name" class="form-control" formControlName="name" placeholder="Enter your name" required>
+                <div *ngIf="reservationForm.controls['name'].invalid && reservationForm.controls['name'].touched" class="invalid-feedback">
+                  Nom est obligatoire
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="dateDebutReservation"> Date Début</label>
+                <input type="datetime-local" id="dateDebutReservation" class="form-control" formControlName="dateDebutReservation" required>
+                <div *ngIf="reservationForm.controls['dateDebutReservation'].invalid && reservationForm.controls['dateDebutReservation'].touched" class="invalid-feedback">
+                    Date Début est obligatoire
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="dateFinReservation"> Date Fin </label>
+                <input type="datetime-local" id="dateFinReservation" class="form-control" formControlName="dateFinReservation" required>
+                <div *ngIf="reservationForm.controls['dateFinReservation'].invalid && reservationForm.controls['dateFinReservation'].touched" class="invalid-feedback">
+                    Date Fin est obligatoire
+                </div>
+              </div>
+              <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+                {{ errorMessage }}
+              </div>
+              <button type="submit" class="btn btn-primary btn-block mt-3" [disabled]="reservationForm.invalid">Ajouter Reservation</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
