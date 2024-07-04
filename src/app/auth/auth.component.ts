@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.css']
+  styleUrls: ['./auth.component.css'],
 })
 export class AuthComponent {
   loginForm: FormGroup;
@@ -20,7 +20,7 @@ export class AuthComponent {
   ) {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
@@ -29,7 +29,7 @@ export class AuthComponent {
   }
 
   onSubmit() {
-    console.log("testing submit");
+    console.log('testing submit');
     this.submitted = true;
     this.errorMessage = ''; // Clear previous error message
 
@@ -39,8 +39,14 @@ export class AuthComponent {
 
     this.authService.login(this.loginForm.value).subscribe(
       (response: any) => {
-        console.log(response);
-        this.router.navigate(['/meeting-rooms']);
+        const user = response.user;
+        localStorage.setItem('token', response.token);
+        localStorage.setItem('isAdmin', user.isAdmin);
+        if (user.isAdmin) {
+          this.router.navigate(['/admin-dashboard']); // Rediriger les admins vers le tableau de bord admin
+        } else {
+          this.router.navigate(['/meeting-rooms']); // Rediriger les autres utilisateurs vers les salles de réunion
+        }
       },
       (error: any) => {
         console.error(error);
