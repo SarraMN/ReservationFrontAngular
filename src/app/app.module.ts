@@ -10,6 +10,9 @@ import { AuthInterceptor } from './auth.interceptor';
 import { RegisterComponent } from './register/register.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { MeetingRoomsComponent } from './meeting-rooms/meeting-rooms.component';
+import { SallesComponent } from './admin-dashboard/salles/salles.component';
+import { ReservationsComponent } from './admin-dashboard/reservations/reservations.component';
+import { UsersComponent } from './admin-dashboard/users/users.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,9 @@ import { MeetingRoomsComponent } from './meeting-rooms/meeting-rooms.component';
     AppComponent,
     AdminDashboardComponent,
     MeetingRoomsComponent,
+    SallesComponent,
+    ReservationsComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,

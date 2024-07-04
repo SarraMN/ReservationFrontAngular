@@ -1,0 +1,25 @@
+<h2>Salles</h2>
+<button (click)="addSalle()">Ajouter une Salle</button>
+<table>
+  <thead>
+    <tr>
+      <th>Numéro</th>
+      <th>Nom</th>
+      <th>Capacité</th>
+      <th>Disponibilité</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let salle of salles">
+      <td>{{ salle.numSalle }}</td>
+      <td>{{ salle.name }}</td>
+      <td>{{ salle.capacity }}</td>
+      <td>{{ salle.isAvailable ? 'Oui' : 'Non' }}</td>
+      <td>
+        <button (click)="editSalle(salle)">Modifier</button>
+        <button (click)="deleteSalle(salle._id)">Supprimer</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
