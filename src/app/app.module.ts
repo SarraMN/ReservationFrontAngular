@@ -15,6 +15,10 @@ import { ReservationsComponent } from './admin-dashboard/reservations/reservatio
 import { UsersComponent } from './admin-dashboard/users/users.component';
 import { ReservationComponent } from './user-dashboard/reservation/reservation.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { AddSalleComponent } from './admin-dashboard/add-salle/add-salle.component';
+import { EditSalleComponent } from './admin-dashboard/edit-salle/edit-salle.component';
+import { ViewReservationComponent } from './admin-dashboard/view-reservation/view-reservation.component';
+import { ViewUserComponent } from './admin-dashboard/view-user/view-user.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +32,10 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
     UsersComponent,
     ReservationComponent,
     UserDashboardComponent,
+    AddSalleComponent,
+    EditSalleComponent,
+    ViewReservationComponent,
+    ViewUserComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,25 @@
+<div class="view-user-container">
+  <h2>Détails de l'utilisateur</h2>
+  <div *ngIf="user">
+    <p><strong>Nom:</strong> {{ user.name }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Admin:</strong> {{ user.isAdmin ? 'Oui' : 'Non' }}</p>
+  </div>
+
+  <h2>Réservations</h2>
+  <div *ngIf="reservations && reservations.length > 0; else noReservations">
+    <ul>
+      <li *ngFor="let reservation of reservations">
+        <p><strong>Nom:</strong> {{ reservation.name }}</p>
+        <p><strong>Salle:</strong> {{ reservation.numSalleId }}</p>
+        <p><strong>Date de début:</strong> {{ reservation.dateDebutReservation | date: 'short' }}</p>
+        <p><strong>Date de fin:</strong> {{ reservation.dateFinReservation | date: 'short' }}</p>
+      </li>
+    </ul>
+  </div>
+  <ng-template #noReservations>
+    <p>Aucune réservation trouvée.</p>
+  </ng-template>
+
+  <button (click)="goBack()">Retour</button>
+</div>
