@@ -1,0 +1,29 @@
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-center">Meeting Rooms</h2>
+        <table class="table table-striped mt-3">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Capacity</th>
+              <th>Availability</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let room of meetingRooms">
+              <td>{{ room.name }}</td>
+              <td>{{ room.capacity }}</td>
+              <td>{{ room.isAvailable ? 'Available' : 'Not Available' }}</td>
+              <td>
+                <button class="btn btn-info btn-sm" (click)="viewDetails(room._id)">View Details</button>
+                <button class="btn btn-primary btn-sm" [disabled]="!room.isAvailable" (click)="reserveRoom(room._id)">Reserve</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
