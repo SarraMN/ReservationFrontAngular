@@ -17,8 +17,8 @@
               <td>{{ room.capacity }}</td>
               <td>{{ room.isAvailable ? 'Available' : 'Not Available' }}</td>
               <td>
-                <button class="btn btn-info btn-sm" (click)="viewDetails(room._id)">View Details</button>
-                <button class="btn btn-primary btn-sm" [disabled]="!room.isAvailable" (click)="reserveRoom(room._id)">Reserve</button>
+                <button class="btn btn-info btn-sm" (click)="viewDetails(room._id)">Voir Details</button>
+                <button class="btn btn-primary btn-sm" [disabled]="!room.isAvailable" (click)="reserveRoom(room._id)">Réserver</button>
               </td>
             </tr>
           </tbody>
