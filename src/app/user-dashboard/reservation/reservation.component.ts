@@ -28,8 +28,11 @@ export class ReservationComponent implements OnInit {
       this.errorMessage = 'Room ID is missing';
       return;
     }
+
     this.roomId = roomId;
+    console.log('salleId'+  this.roomId );
     this.userId = this.getUserIdFromSession();  // Retrieve userId from session
+    console.log('UserId'+ this.userId );
     this.reservationForm = this.fb.group({
       name: ['', Validators.required],
       dateDebutReservation: ['', Validators.required],
@@ -60,7 +63,7 @@ export class ReservationComponent implements OnInit {
 
     this.reservationService.addReservation(reservationData).subscribe(
       response => {
-        this.router.navigate(['/meeting-rooms']);
+        this.router.navigate(['/user-dashboard/meeting-rooms']);
       },
       error => {
         this.errorMessage = error.error.message || 'Error making reservation';

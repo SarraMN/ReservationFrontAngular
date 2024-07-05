@@ -1,0 +1,44 @@
+.container {
+    margin-top: 50px;
+  }
+  
+  .card {
+    border: 1px solid #e3e6f0;
+    border-radius: 0.35rem;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58,59,69,0.15);
+  }
+  
+  .card-header {
+    background-color: #4e73df;
+    color: white;
+    font-weight: bold;
+    padding: 1rem 1.5rem;
+  }
+  
+  .card-header h2 {
+    margin: 0;
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  .list-group-item {
+    border: none;
+    border-bottom: 1px solid #e3e6f0;
+  }
+  
+  .reservation-item h5 {
+    color: #4e73df;
+  }
+  
+  .card-footer {
+    background-color: #f8f9fc;
+    border-top: 1px solid #e3e6f0;
+    padding: 1rem 1.5rem;
+  }
+  
+  .card-footer p {
+    margin: 0;
+  }
+  

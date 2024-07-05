@@ -14,6 +14,9 @@ import { AddSalleComponent } from './admin-dashboard/add-salle/add-salle.compone
 import { EditSalleComponent } from './admin-dashboard/edit-salle/edit-salle.component';
 import { ViewReservationComponent } from './admin-dashboard/view-reservation/view-reservation.component';
 import { ViewUserComponent } from './admin-dashboard/view-user/view-user.component';
+import { UserProfileComponent } from './user-dashboard/user-profile/user-profile.component';
+import { UserReservationsComponent } from './user-dashboard/user-reservations/user-reservations.component';
+import { MeetingRoomCalendarComponent } from './user-dashboard/meeting-room-calendar/meeting-room-calendar.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -42,6 +45,9 @@ const routes: Routes = [
     children: [
       { path: 'meeting-rooms', component: MeetingRoomsComponent },
       { path: 'reserver/:id', component: ReservationComponent },
+      { path: 'userProfile', component: UserProfileComponent },
+      { path: 'mesReservations', component: UserReservationsComponent },
+      { path: 'calender', component: MeetingRoomCalendarComponent },
     ],
   },
 
