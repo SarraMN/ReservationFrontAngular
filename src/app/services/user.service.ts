@@ -25,6 +25,7 @@ export class UserService {
   }
 
   getUserWithReservations(id: string): Observable<any> {
+    console.log(`${this.apiUrl}${id}/reservations`);
     return this.http.get<any>(`${this.apiUrl}${id}/reservations`);
   }
 }

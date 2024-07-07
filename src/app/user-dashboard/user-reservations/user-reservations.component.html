@@ -1,0 +1,26 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card shadow-sm">
+          <div class="card-header text-center">
+            <h2>Vos Réservations</h2>
+          </div>
+          <div class="card-body">
+            <ul class="list-group">
+              <li class="list-group-item" *ngFor="let reservation of reservations">
+                <div class="reservation-item">
+                  <h5 class="mb-1">Nom: {{ reservation.name }}</h5>
+                  <p class="mb-1">Date Début: {{ reservation.dateDebutReservation | date }}</p>
+                  <p class="mb-1">Date Fin: {{ reservation.dateFinReservation | date }}</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="card-footer text-center">
+            <p>Pour plus d'informations, contactez l'administrateur.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

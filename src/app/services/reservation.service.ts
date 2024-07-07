@@ -3,10 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class ReservationService {
-  private apiUrl = '/api/reservation/';
+  private apiUrl = 'http://127.0.0.1:9090/reservation/';
 
   constructor(private http: HttpClient) {}
 
@@ -15,7 +15,7 @@ export class ReservationService {
   }
 
   getReservationById(id: string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}${id}`);
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 
   addReservation(reservation: any): Observable<any> {
@@ -23,7 +23,7 @@ export class ReservationService {
   }
 
   updateReservation(id: string, reservation: any): Observable<any> {
-    return this.http.patch<any>(`${this.apiUrl}${id}`, reservation);
+    return this.http.patch<any>(`${this.apiUrl}/${id}`, reservation);
   }
 
   deleteReservation(id: string): Observable<any> {

@@ -1,14 +1,74 @@
-nav ul {
-    list-style-type: none;
-    padding: 0;
+.navigation {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background-size: 400% 400%;
+  background-image: linear-gradient(-45deg, #ff5959, #ff4040, #ff0d6e, #ff8033,#d74177);
+  padding: 1rem; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  display: flex; 
+  justify-content: center; 
+}
+
+ul {
+  list-style-type: none; 
+  display: flex;
+  padding: 0; 
+  margin: 0
+}
+
+li {
+  margin: 0 40px; 
+}
+
+a {
+  text-decoration: none; 
+  color: white; 
+  transition: color 0.3s ease;
+  font-size: 14pt;
+  font-weight: 500;
+}
+
+a:hover {
+  color: #fff; 
+}
+
+.active, .active1, .active2,.active3, .active4 {
+  cursor: pointer;
+  text-shadow: 1px 2px 18px #fff;
+  transition: 2s;
+  margin-top: -5px;
+}
+
+.active:hover, .active1:hover, .active2:hover, .active3:hover, .active4:hover{
+  color: #fff;
+  animation: 1.5s myFlash linear infinite;
+  text-shadow: 2px 2px 30px #fff;
+  transition: 2s;
+}
+
+@keyframes myFlash {
+  0% {
+    opacity: 1;
   }
   
-  nav ul li {
-    display: inline;
-    margin-right: 10px;
+  50%{
+    opacity: .1;
   }
   
-  .active {
-    font-weight: bold;
+  100% {
+    opacity: 1;
   }
+}
+
+.active4 {
+  position: fixed;
+  right: 0;
+  margin-right: 50px; 
+  color: #fff;
+}
+.content-container{
+  margin-top: 100px;
   
+}

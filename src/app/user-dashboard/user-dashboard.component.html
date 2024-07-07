@@ -1,6 +1,13 @@
-<nav>
-    <ul>
-      <li><a routerLink="" routerLinkActive="active">hello</a></li>
-    </ul>
-  </nav>
+<nav class="navigation">
+  <ul>
+    <li class="active"><a routerLink="/user-dashboard/meeting-rooms" routerLinkActive="active">Meeting Rooms</a></li>
+    <li class="active1"><a routerLink="/user-dashboard/userProfile" routerLinkActive="active">Modifier Profil</a></li>
+    <li class="active2"><a routerLink="/user-dashboard/mesReservations" routerLinkActive="active">Mes Réservations</a></li>
+    <li class="active3"><a routerLink="/user-dashboard/calender" routerLinkActive="active"> calendrier réservations </a></li>
+
+    <li class="active4"><a (click)="logout()">Déconnexion</a></li>
+  </ul>
+</nav>
+<div class="content-container">
 <router-outlet></router-outlet>
+</div>

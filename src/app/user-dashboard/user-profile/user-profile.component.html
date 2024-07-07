@@ -1,0 +1,53 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header c-bg-primary text-white text-center">
+            <h2>Modifier Profil</h2>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="profileForm" (ngSubmit)="updateProfile()" class="needs-validation" novalidate>
+              <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
+              <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+              
+              <div class="form-group">
+                <label for="name">Nom</label>
+                <input type="text" id="name" class="form-control" formControlName="name" placeholder="Entrez votre nom" required>
+                <div *ngIf="profileForm.get('name')?.invalid && profileForm.get('name')?.touched" class="invalid-feedback">
+                  Nom est obligatoire
+                </div>
+              </div>
+  
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" formControlName="email" placeholder="Entrez votre email" required>
+                <div *ngIf="profileForm.get('email')?.invalid && profileForm.get('email')?.touched" class="invalid-feedback">
+                  <div *ngIf="profileForm.get('email')?.errors?.['required']">Email est obligatoire</div>
+                  <div *ngIf="profileForm.get('email')?.errors?.['email']">Format de l'email invalide</div>
+                </div>
+              </div>
+  
+              <div class="form-group">
+                <label for="oldPassword">Ancien Mot de Passe</label>
+                <input type="password" id="oldPassword" class="form-control" formControlName="oldPassword" placeholder="Entrez votre ancien mot de passe" required>
+                <div *ngIf="profileForm.get('oldPassword')?.invalid && profileForm.get('oldPassword')?.touched" class="invalid-feedback">
+                  Ancien mot de passe est obligatoire
+                </div>
+              </div>
+  
+              <div class="form-group">
+                <label for="newPassword">Nouveau Mot de Passe</label>
+                <input type="password" id="newPassword" class="form-control" formControlName="newPassword" placeholder="Entrez votre nouveau mot de passe" required>
+                <div *ngIf="profileForm.get('newPassword')?.invalid && profileForm.get('newPassword')?.touched" class="invalid-feedback">
+                  Nouveau mot de passe est obligatoire
+                </div>
+              </div>
+  
+              <button type="submit" class="btn btn-primary btn-block mt-3" [disabled]="profileForm.invalid">Enregistrer</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
