@@ -1,6 +1,14 @@
 # ReservationFrontAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+This is an academic project generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+
+## Features 
+
+- User Authentication: Allow users to sign up, log in, and log out.
+- Display of Available Meeting Rooms: Show a list of available meeting rooms with their details such as capacity, amenities, availability, etc.
+- Meeting Room Reservation: Allow logged-in users to book a meeting room for a specific time slot.
+- Reservation Management: Enable users to view, modify, and cancel their existing reservations.
+- Reservation Calendar: Display a calendar of reservations for each meeting room to visualize availability.
 
 ## Development server
 
