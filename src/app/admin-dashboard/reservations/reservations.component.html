@@ -1,5 +1,9 @@
 <div class="reservations-container">
-  <table>
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="mb-0">Liste des Réservations</h2>
+  </div>
+
+  <table class="table">
     <thead>
       <tr>
         <th>Nom</th>
@@ -18,8 +22,18 @@
         <td>{{ reservation.dateDebutReservation | date : "short" }}</td>
         <td>{{ reservation.dateFinReservation | date : "short" }}</td>
         <td>
-          <button (click)="viewReservation(reservation._id)">View</button>
-          <button (click)="deleteReservation(reservation._id)">Delete</button>
+          <button
+            class="btn btn-sm btn-warning me-2"
+            (click)="viewReservation(reservation._id)"
+          >
+            View
+          </button>
+          <button
+            class="btn btn-sm btn-danger"
+            (click)="deleteReservation(reservation._id)"
+          >
+            Delete
+          </button>
         </td>
       </tr>
     </tbody>

@@ -33,4 +33,8 @@ export class AddSalleComponent implements OnInit {
       });
     }
   }
+
+  goBack(): void {
+    this.router.navigate(['/admin-dashboard/salles']);
+  }
 }

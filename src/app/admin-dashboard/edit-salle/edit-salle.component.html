@@ -1,18 +1,45 @@
-<div class="edit-salle-container">
-  <h2>Editer une Salle</h2>
-  <form (ngSubmit)="onSubmit()" [formGroup]="salleForm">
-    <label for="numSalle">Numéro de Salle:</label>
-    <input id="numSalle" formControlName="numSalle" type="number" />
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header c-bg-primary text-white text-center">
+          <h2>Editer une Salle</h2>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="onSubmit()" [formGroup]="salleForm" class="needs-validation" novalidate>
+            <div class="form-group">
+              <label for="numSalle">Numéro de Salle:</label>
+              <input id="numSalle" formControlName="numSalle" type="number" class="form-control" required />
+              <div *ngIf="salleForm.get('numSalle')?.invalid && salleForm.get('numSalle')?.touched" class="invalid-feedback">
+                Numéro de Salle est obligatoire
+              </div>
+            </div>
 
-    <label for="name">Nom:</label>
-    <input id="name" formControlName="name" type="text" />
+            <div class="form-group">
+              <label for="name">Nom:</label>
+              <input id="name" formControlName="name" type="text" class="form-control" required />
+              <div *ngIf="salleForm.get('name')?.invalid && salleForm.get('name')?.touched" class="invalid-feedback">
+                Nom est obligatoire
+              </div>
+            </div>
 
-    <label for="capacity">Capacité:</label>
-    <input id="capacity" formControlName="capacity" type="number" />
+            <div class="form-group">
+              <label for="capacity">Capacité:</label>
+              <input id="capacity" formControlName="capacity" type="number" class="form-control" required />
+              <div *ngIf="salleForm.get('capacity')?.invalid && salleForm.get('capacity')?.touched" class="invalid-feedback">
+                Capacité est obligatoire
+              </div>
+            </div>
 
-    <label for="isAvailable">Disponible:</label>
-    <input id="isAvailable" formControlName="isAvailable" type="checkbox" />
+            <div class="form-group">
+              <label for="isAvailable">Disponible:</label>
+              <input id="isAvailable" formControlName="isAvailable" type="checkbox" class="form-check-input" />
+            </div>
 
-    <button type="submit">Mettre à jour</button>
-  </form>
+            <button type="submit" class="btn btn-primary btn-block mt-3" [disabled]="salleForm.invalid">Mettre à jour</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

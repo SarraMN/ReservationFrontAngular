@@ -1,0 +1,90 @@
+.salles-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.salles-container h2 {
+  color: #333;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.salles-container .btn-primary {
+  color: #343a40;
+  background-color: transparent;
+  border: 1px solid #343a40;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.salles-container .btn-primary:hover {
+  color: #ffffff;
+  background-color: #343a40;
+  border-color: #343a40;
+}
+
+.table {
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+  text-align: center;
+  padding: 12px 15px;
+  background: #ffffff;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.table thead th {
+  color: #343a40;
+  font-weight: bold;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: #f8f9fa;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.table tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+.table .btn-warning {
+  color: #ffffff;
+  background-color: #ffc107;
+  border-color: #ffc107;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.table .btn-warning:hover {
+  background-color: #e0a800;
+  border-color: #e0a800;
+}
+
+.table .btn-danger {
+  color: #ffffff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.table .btn-danger:hover {
+  background-color: #c82333;
+  border-color: #c82333;
+}
+.toast-success {
+  background-color: #4caf50 !important; /* Couleur verte */
+  color: white !important; /* Couleur du texte */
+}

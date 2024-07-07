@@ -23,6 +23,8 @@ import { UserProfileComponent } from './user-dashboard/user-profile/user-profile
 import { UserReservationsComponent } from './user-dashboard/user-reservations/user-reservations.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { MeetingRoomCalendarComponent } from './user-dashboard/meeting-room-calendar/meeting-room-calendar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,6 @@ import { MeetingRoomCalendarComponent } from './user-dashboard/meeting-room-cale
     UserProfileComponent,
     UserReservationsComponent,
     MeetingRoomCalendarComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -52,6 +53,18 @@ import { MeetingRoomCalendarComponent } from './user-dashboard/meeting-room-cale
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-left',
+      preventDuplicates: true,
+      toastClass: 'toast-success',
+      timeOut: 3000, // Durée d'affichage par défaut (ms)
+      extendedTimeOut: 2000, // Temps d'affichage prolongé (ms)
+      tapToDismiss: true, // Cliquez pour fermer
+      easeTime: 300, // Temps d'animation
+    }),
+    // Autres modules importés
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

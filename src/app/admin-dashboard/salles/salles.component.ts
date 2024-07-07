@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SalleService } from '../../services/salle.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-salles',
@@ -10,7 +11,11 @@ import { Router } from '@angular/router';
 export class SallesComponent implements OnInit {
   salles: any[] = [];
 
-  constructor(private salleService: SalleService, private router: Router) {}
+  constructor(
+    private salleService: SalleService,
+    private router: Router,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {
     this.getSalles();
@@ -33,6 +38,10 @@ export class SallesComponent implements OnInit {
   deleteSalle(id: string): void {
     this.salleService.deleteSalle(id).subscribe(() => {
       this.salles = this.salles.filter((s) => s._id !== id);
+      this.toastr.success(
+        'La salle a été supprimée avec succès',
+        'Suppression réussie'
+      );
     });
   }
 }

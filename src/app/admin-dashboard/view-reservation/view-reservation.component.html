@@ -1,11 +1,36 @@
-<div class="view-reservation-container">
-  <h2>Détails de la Réservation</h2>
-  <div *ngIf="reservation">
-    <p><strong>Nom:</strong> {{ reservation.name }}</p>
-    <p><strong>Utilisateur:</strong> {{ reservation.userId }}</p>
-    <p><strong>Numéro de Salle:</strong> {{ reservation.numSalleId }}</p>
-    <p><strong>Date de Début:</strong> {{ reservation.dateDebutReservation | date: 'short' }}</p>
-    <p><strong>Date de Fin:</strong> {{ reservation.dateFinReservation | date: 'short' }}</p>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-sm">
+        <div class="card-header text-center">
+          <h2>Détails de la Réservation</h2>
+        </div>
+        <div class="card-body">
+          <div class="reservation-detail-container">
+            <div>
+              <p>
+                <strong>Nom de la réservation:</strong> {{ reservation.name }}
+              </p>
+              <p>
+                <strong>Date de début:</strong>
+                {{ reservation.dateDebutReservation | date : "short" }}
+              </p>
+              <p>
+                <strong>Date de fin:</strong>
+                {{ reservation.dateFinReservation | date : "short" }}
+              </p>
+              <p><strong>Utilisateur:</strong> {{ userDetails.name }}</p>
+              <p><strong>Salle:</strong> {{ salleDetails.name }}</p>
+              <p>
+                <strong>Numéro de Salle:</strong> {{ salleDetails.numSalle }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer text-center">
+          <button class="btn btn-primary" (click)="goBack()">Retour</button>
+        </div>
+      </div>
+    </div>
   </div>
-  <button (click)="goBack()">Retour</button>
 </div>
