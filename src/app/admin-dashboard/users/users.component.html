@@ -1,5 +1,9 @@
 <div class="users-container">
-  <table>
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="mb-0">Liste des Utilisateurs</h2>
+  </div>
+
+  <table class="table">
     <thead>
       <tr>
         <th>Nom</th>
@@ -14,8 +18,15 @@
         <td>{{ user.email }}</td>
         <td>{{ user.isAdmin ? "Oui" : "Non" }}</td>
         <td>
-          <button (click)="viewUser(user._id)">Afficher</button>
-          <button (click)="deleteUser(user._id)">Supprimer</button>
+          <button
+            class="btn btn-sm btn-warning me-2"
+            (click)="viewUser(user._id)"
+          >
+            Afficher
+          </button>
+          <button class="btn btn-sm btn-danger" (click)="deleteUser(user._id)">
+            Supprimer
+          </button>
         </td>
       </tr>
     </tbody>

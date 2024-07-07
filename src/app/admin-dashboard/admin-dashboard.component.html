@@ -1,9 +1,11 @@
-<nav>
+<nav class="navigation">
   <ul>
-    <li><a routerLink="salles" routerLinkActive="active">Salles</a></li>
-    <li><a routerLink="reservations" routerLinkActive="active">Réservations</a></li>
-    <li><a routerLink="users" routerLinkActive="active">Utilisateurs</a></li>
-    <li><a (click)="logout()">Déconnexion</a></li>
+    <li class="active"><a routerLink="salles" routerLinkActive="active">Salles</a></li>
+    <li class="active1"><a routerLink="reservations" routerLinkActive="active">Réservations</a></li>
+    <li class="active2"><a routerLink="users" routerLinkActive="active">Utilisateurs</a></li>
+    <li class="active4"><a (click)="logout()">Déconnexion</a></li>
   </ul>
 </nav>
-<router-outlet></router-outlet>
+<div class="content-container">
+  <router-outlet></router-outlet>
+</div>

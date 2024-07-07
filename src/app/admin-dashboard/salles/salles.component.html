@@ -1,13 +1,17 @@
-<div class="salles-container">
-  <button (click)="navigateToAddSalle()">Add Salle</button>
-  <table>
+<div class="container salles-container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="mb-0">Liste des Salles</h2>
+    <button class="btn btn-primary" (click)="navigateToAddSalle()">Ajouter une Salle</button>
+  </div>
+
+  <table class="table">
     <thead>
       <tr>
-        <th>Numéro de Salle</th>
-        <th>Nom</th>
-        <th>Capacité</th>
-        <th>Disponibilité</th>
-        <th>Actions</th>
+        <th scope="col">Numéro de Salle</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Capacité</th>
+        <th scope="col">Disponibilité</th>
+        <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -17,8 +21,8 @@
         <td>{{ salle.capacity }}</td>
         <td>{{ salle.isAvailable ? 'Oui' : 'Non' }}</td>
         <td>
-          <button (click)="navigateToEditSalle(salle._id)">Edit</button>
-          <button (click)="deleteSalle(salle._id)">Delete</button>
+          <button class="btn btn-sm btn-warning me-2" (click)="navigateToEditSalle(salle._id)">Modifier</button>
+          <button class="btn btn-sm btn-danger" (click)="deleteSalle(salle._id)">Supprimer</button>
         </td>
       </tr>
     </tbody>

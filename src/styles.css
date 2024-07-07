@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+.toast-success {
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+.toast-success {
+  background-color: #4caf50 !important; /* Fond vert pour les toasts de succès */
+  color: white !important; /* Texte blanc */
+}
+
+.ngx-toastr .toast-error {
+  background-color: #f44336 !important; /* Fond rouge pour les toasts d'erreur */
+  color: white !important; /* Texte blanc */
+}
+
+.ngx-toastr .toast-info {
+  background-color: #2196f3 !important; /* Fond bleu pour les toasts d'information */
+  color: white !important; /* Texte blanc */
+}
+
+.ngx-toastr .toast-warning {
+  background-color: #ff9800 !important; /* Fond orange pour les toasts d'avertissement */
+  color: white !important; /* Texte blanc */
+}
